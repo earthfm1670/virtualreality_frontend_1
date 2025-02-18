@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import AddTodo from "@/components/AddTodo";
+import TodoItem from "@/components/TodoItem";
 
 interface Todo {
   id: number;
@@ -54,7 +55,11 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-start p-8">
       <h1 className="text-4xl font-bold mb-8 text-gray-100">Todo List</h1>
       <AddTodo onAdd={addTodo} />
-      <ul className="w-full max-w-md mt-4"></ul>
+      <ul className="w-full max-w-md mt-4">
+        {todos.map((todo) => (
+          <TodoItem key={todo.id} todo={todo} onDelete={deleteTodo} onToggle={toggleTodo} onEdit={editTodo} />
+        ))}
+      </ul>
     </main>
   );
 }
