@@ -25,6 +25,14 @@ export default function TodoItem({
   onToggle,
   onEdit,
 }: TodoItemProps) {
+  const [isEditing, setIsEditing] = useState<boolean>(false);
+  const [editText, setEditText] = useState<string>(todo.text);
+
+  const handleEdit = () => {
+    onEdit(todo.id, editText);
+    setIsEditing(false);
+  };
+
   return (
     <li className="flex items-center justify-between p-4 border-b border-gray-700">
       <div className="flex item-center space-x-2">
