@@ -6,9 +6,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "BuyMovie - VirtualReality Movie Store",
-  description:
-    "Browse and purchase your favorite movie online at the price that is right for you",
+  title: "Todo List",
+  description: "To do list in dark-gray theme",
 };
 
 export default function RootLayout({
